@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <time.h>
 
 // Create a struct that has at least 2 data members, one must be a string.
 // Don’t just combine random things, make it meaningful (like food and price, athlete and associated statistic, Pokemon and something about Pokemon ..)
@@ -27,11 +27,13 @@ struct school * make_school(int pop, char *nam) {
 
 // Write a main function that tests all these things.
 int main() {
+  srand(time(NULL));
+
   /* code */
   struct school *stuy = make_school(4000,"Stuy");
   introduceSchool(stuy);
 
-  struct school *blah = make_school(999,"blah");
+  struct school *blah = make_school(rand(),"blah");
   introduceSchool(blah);
 
   return 0;
